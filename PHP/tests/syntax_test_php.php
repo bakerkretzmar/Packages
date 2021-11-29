@@ -1894,6 +1894,25 @@ JAVASCRIPT;
 //        ^ punctuation.terminator.expression
 //         ^ meta.heredoc-end
 
+echo <<< js
+//   ^^^ keyword.operator.heredoc
+//       ^^ meta.string.heredoc meta.tag.heredoc
+//       ^^ entity.name.tag.heredoc
+var foo = 1;
+//^^^^^^^^^^ meta.embedded.js source.js
+// <- keyword.declaration
+//  ^^^ variable.other.readwrite
+//        ^ constant.numeric
+$var
+// <- variable.other.php
+//^^ variable.other.php
+    ($var)
+//   ^^^^ variable.other.php
+js;
+// <- entity.name.tag.heredoc
+//^ punctuation.terminator.expression
+// ^ meta.heredoc-end
+
 echo <<<CSS
 //   ^^^ keyword.operator.heredoc
 //      ^^^ meta.string.heredoc meta.tag.heredoc
