@@ -1480,12 +1480,12 @@ contexts:
       push: scope:source.css
       with_prototype:
         - include: interpolation
-  heredoc-markdown:
-    - meta_include_prototype: false
-    - match: ''
-      push: scope:text.html.markdown
-      with_prototype:
-        - include: interpolation
+  # heredoc-markdown:
+  #   - meta_include_prototype: false
+  #   - match: ''
+  #     push: scope:text.html.markdown
+  #     with_prototype:
+  #       - include: interpolation
   instantiation:
     # anonymous class ( http://php.net/manual/en/language.oop5.anonymous.php )
     - match: '(?i)(new)\s+(class)\b\s*'
