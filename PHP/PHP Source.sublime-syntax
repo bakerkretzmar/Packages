@@ -1311,7 +1311,7 @@ contexts:
             2: meta.string.heredoc.php meta.tag.heredoc.php entity.name.tag.heredoc.php
           embed: heredoc-html
           embed_scope: meta.embedded.html
-          escape: (?=^\s*HTML\b)
+          escape: (?=^\s*\2\b)
         - match: (<<<)\s*((')(HTML)('))\s*$\n?
           captures:
             1: keyword.operator.heredoc.php
