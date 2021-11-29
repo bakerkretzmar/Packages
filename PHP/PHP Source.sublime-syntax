@@ -1305,13 +1305,10 @@ contexts:
             2: punctuation.terminator.expression.php
             3: meta.heredoc-end.php
           pop: 1
-        - match: (<<<)\s*(()(HTML)())\s*$\n?
+        - match: (<<<)\s*(HTML)\s*$\n?
           captures:
             1: keyword.operator.heredoc.php
-            2: meta.string.heredoc.php meta.tag.heredoc.php
-            3: punctuation.definition.tag.begin.php
-            4: entity.name.tag.heredoc.php
-            5: punctuation.definition.tag.end.php
+            2: meta.string.heredoc.php meta.tag.heredoc.php entity.name.tag.heredoc.php
           embed: heredoc-html
           embed_scope: meta.embedded.html
           escape: (?=^\s*HTML\b)
