@@ -2003,6 +2003,21 @@ SQL;
 // ^ punctuation.terminator.expression
 //  ^ meta.heredoc-end
 
+echo <<<markdown
+//   ^^^ keyword.operator.heredoc
+//      ^^^^^^^^ meta.string.heredoc meta.tag.heredoc
+//      ^^^^^^^^ entity.name.tag.heredoc
+# Hello world!
+//^^^^^^^^^^^^ meta.embedded.markdown text.html.markdown
+// <- punctuation.definition.heading.begin
+//^^^^^^^^^^^^ meta.block-level markup.heading.1
+// ^^^^^^^^^^^ entity.name.section
+## And hello to $name
+//              ^^^^^ variable.other.php
+markdown;
+// <- entity.name.tag.heredoc
+//      ^ punctuation.terminator.expression
+//       ^ meta.heredoc-end
 
 
 class OutputsHtml {
