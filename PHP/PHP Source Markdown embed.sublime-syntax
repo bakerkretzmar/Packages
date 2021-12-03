@@ -1,0 +1,32 @@
+%YAML 1.2
+---
+name: PHP Source Markdown embed
+hidden: true
+version: 2
+scope: source.markdown-embedded-php
+extends: Packages/PHP/PHP Source.sublime-syntax
+
+contexts:
+  heredoc:
+    - match: (?=<<<\s*'?({{identifier}})'?\s*$)
+      push:
+        - match: (<<<)\s*(?i:(MARKDOWN|MD))\s*$\n?
+          captures:
+            1: keyword.operator.heredoc.php
+            2: meta.string.heredoc.php meta.tag.heredoc.php entity.name.tag.heredoc.php
+          push:
+            - meta_scope: string.unquoted.heredoc.php
+            - match: '{{heredoc_unquoted_end}}'
+              pop: 1
+            - include: interpolation
+        - match: (<<<)\s*((')(?i:(MARKDOWN|MD))('))\s*$\n?
+          captures:
+            1: keyword.operator.heredoc.php
+            2: meta.string.heredoc.php meta.tag.heredoc.php
+            3: punctuation.definition.tag.begin.php
+            4: entity.name.tag.heredoc.php
+            5: punctuation.definition.tag.end.php
+          push:
+            - meta_scope: string.unquoted.heredoc.php
+            - match: '{{heredoc_quoted_end}}'
+              pop: 1

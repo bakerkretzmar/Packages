@@ -1641,7 +1641,7 @@ contexts:
         0: meta.code-fence.definition.begin.php.markdown-gfm
         2: punctuation.definition.raw.code-fence.begin.markdown
         5: constant.other.language-name.markdown
-      embed: scope:source.php
+      embed: scope:source.markdown-embedded-php
       embed_scope: markup.raw.code-fence.php.markdown-gfm
       escape: '{{code_fence_escape}}'
       escape_captures:
