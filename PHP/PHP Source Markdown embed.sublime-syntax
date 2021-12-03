@@ -8,6 +8,7 @@ extends: Packages/PHP/PHP Source.sublime-syntax
 
 contexts:
   heredoc:
+    - meta_prepend: true
     - match: (?=<<<\s*'?({{identifier}})'?\s*$)
       push:
         - match: (<<<)\s*(?i:(MARKDOWN|MD))\s*$\n?
