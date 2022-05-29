@@ -1005,10 +1005,10 @@ contexts:
 
   arrow-function-or-fail:
     - include: comments
-    - include: function-return-type
     - match: =>
       scope: keyword.declaration.function.arrow.php
       pop: 1
+    - include: function-return-type
     - match: (?=\S)
       fail: arrow-function-branch
 
